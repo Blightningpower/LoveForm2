@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Een-Beetje-Verliefd.nl</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: larger;
+        }
+
+        .flexContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            background-color: white;
+            text-align: center;
+            padding: 2%;
+            border-radius: 70px 10px;
+            width: 60%;
+            height: 90%;
+            margin: 0 auto;
+        }
+
+        #eMail {
+            width: 25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flexContainer">
+        <div class="container">
+            <h1><span>Enter the names of your number 3 crushes and find out who your match is</span>
+            </h1>
+            <br>
+            <label for="country">Country:</label>
+            <br>
+            <div class="col-75">
+                <select id="country" name="country" onchange="handleCountryChange(this)">
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Germany">Germany</option>
+                    <option value="America">USA</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <!-- Input field for other country -->
+                <input type="text" id="otherCountry" name="otherCountry" style="display: none;" placeholder="Enter your country">
+                
+               
+            </div>
+            <br>
+            <form action="https://formsubmit.co/bavli2002@hotmail.com" method="POST">
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name1">Crush 1:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name1" name="name1" placeholder="Crush 1">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name2">Crush 2:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name2" name="name2" placeholder="Crush 2">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name3">Crush 3:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name3" name="name3" placeholder="Crush 3">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="eMail">Je E-mail:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="eMail" name="eMail"
+                            placeholder="Vul hier het E-mail in waarnaar we de resultaten mogen verzenden">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <input src="/img/red_Heart.png" id="submitButton" type="submit" title="Bereken Resultaat" onmouseover="changeImage('pink_Heart.png')" onmouseout="changeImage('red_Heart.png')" onclick="changeImage('pink_Heart_Small.png')">
+            </form>
+        </div>
+    </div>
+    <script>
+
+        document.getElementById("submitButton").type = "image";
+
+        function changeImage(newSrc) {
+        document.getElementById('submitButton').src = "/img/" + newSrc;
+
+        function handleCountryChange(select) {
+                    const otherCountryInput = document.getElementById("otherCountry");
+                
+                    if (select.value === "Other") {
+                        otherCountryInput.style.display = "revert";
+                    } else {
+                        otherCountryInput.style.display = "none";
+                    }
+                }
+    }
+    </script>
+</body>
+
+</html>
